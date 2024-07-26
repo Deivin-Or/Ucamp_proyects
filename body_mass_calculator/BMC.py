@@ -1,2 +1,1 @@
-"prueba"
-"socc"
+# Inicio de proyecto de masa corporal
