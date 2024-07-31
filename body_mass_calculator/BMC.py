@@ -52,7 +52,7 @@ while True:
             body_weight = float(body_weight)
             break
         else:
-            print("Se detectó un fallo.\nSolo puede ingresar números.")
+            print("Se detectó un fallo.\nSolo puede ingresar números.") 
 print(type(body_weight))
 
 while True:
