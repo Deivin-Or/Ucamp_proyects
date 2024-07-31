@@ -56,12 +56,12 @@ while True:
 print(type(body_weight))
 
 while True:
-    height = input('Ingrese su peso en metros: \n\t mt: --> ')
+    height = input('Ingrese su altura en metros en metros: \n\t mt: --> ')
     if height == (""):
         print ("No puede dejar campos vacios\n")
     elif height.count(".") > 1:
         print("Solo se puede usar un punto decimal")
-    elif ((height.count("-") > 1) or ((height.count("-") == 1 ) and height.sount("0"))):
+    elif ((height.count("-") > 1) or ((height.count("-") == 1 ) and height.count("0"))):
         print("No se permiten cantidades negativas o iguales a 0")
     else:
         height_parts = height.split(".")
