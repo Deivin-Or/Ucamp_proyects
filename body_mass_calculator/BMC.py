@@ -32,48 +32,54 @@ while True:
 * Solo la primera letra de cada nombre puede ir en mayuscula"""
         print(f"{last_name_error_mensaje}\n")
 
+# Validación de peso
 while True:
     body_weight = input('Ingrese su peso en kilogramos: \n\t kg --> ')
     # Verificación de esapcio en blanco, cantidaes negativas y exceso de puntos decimales
     if body_weight == "":
         print("No puede dejar campos vacios\n")
     elif body_weight.count(".") > 1:
-        print("Solo puede usar un punto decimal.")
-    elif (body_weight.count("-") > 1) or (body_weight.count("-") == 1 and body_weight.count("0")):
-        print ("No se permite el uso de cantidades negativas")
+        print("Solo puede usar un punto decimal.\n")
+    elif ((body_weight.count("-") > 1) or (body_weight.count("-") == 1 )):
+        print("No se permiten cantidades negativas\n")
+    elif all((zero == "0" for zero in body_weight) or (zero_point == "0." for zero_point in body_weight)):
+        print ("No se permite el uso de cantidades iguales a cero\n")
     else:
         # División en dos partes desde el punto decimal para luego verificar con .isdigit si se cumplen
         body_weight_parts = body_weight.split(".")
         entire_part = body_weight_parts[0]
         decimal_part = body_weight_parts[1] if len(body_weight_parts) > 1 else ""
         # Verificación de partes núemricas
-        if ((entire_part.isdigit()) and (decimal_part.isdigit()) or decimal_part == ""):
+        if entire_part.isdigit() and (decimal_part.isdigit() or decimal_part == ""):
         # Convertimos la variable a float descpues de la verificación.
             body_weight = float(body_weight)
             break
         else:
-            print("Se detectó un fallo.\nSolo puede ingresar números.") 
-print(type(body_weight))
+            print("Se detectó un fallo.\nSolo puede ingresar números.\n") 
+# print(type(body_weight))
 
+# Validación de altura
 while True:
     height = input('Ingrese su altura en metros en metros: \n\t mt: --> ')
     if height == (""):
         print ("No puede dejar campos vacios\n")
     elif height.count(".") > 1:
-        print("Solo se puede usar un punto decimal")
-    elif ((height.count("-") > 1) or ((height.count("-") == 1 ) and height.count("0"))):
-        print("No se permiten cantidades negativas o iguales a 0")
+        print("Solo se puede usar un punto decimal\n")
+    elif ((height.count("-") > 1) or (height.count("-") == 1 )):
+        print("No se permiten cantidades negativas\n")
+    elif all((zero == "0" for zero in height) or (zero_point == "0." for zero_point in height)):
+        print ("No se permite el uso de cantidades iguales a cero\n")
     else:
         height_parts = height.split(".")
         heights_entire_part = height_parts [0]
         heights_decimal_part = height_parts [1] if len(height_parts) > 1 else ""
         # Verificación de las partes númericas
-        if (heights_entire_part.isdigit() and heights_decimal_part.isdigit() or heights_decimal_part == ""):
+        if heights_entire_part.isdigit() and (heights_decimal_part.isdigit() or heights_decimal_part == ""):
             #Conversión de cantidad a float
             height = float(height)
             break
         else:
-            print("Se detectó un error\nSolo puede ingresar números")
+            print("Se detectó un error\nSolo puede ingresar números\n")
 # Verificación del proceso y verificación de las variables
 print(f"Los datos recolectados son: {name}, {last_name}, {body_weight}, {height}")
 
