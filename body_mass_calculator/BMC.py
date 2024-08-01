@@ -124,19 +124,19 @@ if imc < 18.5:
     symbol = ("🔵🍔🍝")
     category = (f"{BLUE}Bajo peso{RESET_COLOR}")
     motivation = ("Necesitas alimentarte mejor")
-elif 18.5 >= imc < 24.9:
+elif imc >= 18.5 and imc < 24.9:
     symbol = ("💚💪🏆")
     category = (f"{GREEN}Normal{RESET_COLOR}")
     motivation = ("Muy bien alimentadote y ejercitandote así.")
-elif 25 >= imc < 29.9:
+elif imc >= 25 and imc < 29.9:
     symbol = ("🟢⚽🏃‍♂️")
-    cotegory = (f"{GREEN_DARK}Sobrepeso{RESET_COLOR}")
+    category = (f"{GREEN_DARK}Sobrepeso{RESET_COLOR}")
     motivation = ("Un taquito menos no te mueres de hambre")
-elif 30 >= imc < 34.9:
+elif imc >= 30 and imc < 34.9:
     symbol = ("🟡🥦🧗‍♀️")
     category = (f"{YELLOW}Obesidad I{RESET_COLOR}")
     motivation = ("Necesitas empezar a cuidar tu alimentación y elige un deporte que te guste.")
-elif 35 >= imc < 39.9:
+elif imc >= 35 and imc < 39.9:
     symbol = ("🟠🏋️❗")
     category = (f"{ORANGE}Obesidad II{RESET_COLOR}")
     motivation = ("Ve a examinarte para comenzzar una dieta y deporte riguroso, los necesitas.")
@@ -156,4 +156,4 @@ Su IMC es de:{imc:.2f} {category}
 Cometario: {motivation} {symbol}
 -------------------------------------------------------------""")
 
-print('Gracias por usar nuestra calculadora.')
+print('\nGracias por usar nuestra calculadora.')
