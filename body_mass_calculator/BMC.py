@@ -1,4 +1,5 @@
 # Inicio de proyecto de masa corporal
+
 # Bienvenida del usuario
 welcome  = "Bienvenido nuevo usuario a la calculadora de masa corporal"
 print(welcome.capitalize())
@@ -34,12 +35,11 @@ while True:
 
 #Validación de edad
 while True:
-    old_years = input("Ingrese su edad en años \n \t-->")
+    old_years = input("Ingrese su edad en años \n \t--> ")
     if old_years == "":
         print("No se permite dejar espacios en blanco")
     elif all(old_years_zero == "0" for old_years_zero in old_years):
         print ("Ingrese una cantidad válida\n Próximas... actualizaciones podra ingresa edades menores a 1 año.\n")
-
     elif not old_years.isdigit():
         old_years_error_mensage = """Se detectó un error
 Verifique lo siguiente:
@@ -111,17 +111,49 @@ while True:
 # Proceso matemático
 imc = (body_weight / height ** 2)
 
+# Variables de color.
+BLUE = ("\033[94m")
+GREEN = ("\033[92m")
+GREEN_DARK = ("\033[32m")
+YELLOW = ("\033[93m")
+ORANGE = ("\033[33m")
+RED = "\033[91m"
+RESET_COLOR = "\033[0m"
+
 if imc < 18.5:
-    category = ("Bajo peso") 
+    symbol = ("🔵🍔🍝")
+    category = (f"{RED}Bajo peso{RESET_COLOR}")
+    motivation = ("Necesitas alimentarte mejor")
 elif 18.5 >= imc < 24.9:
-    category = ("Normal") 
+    symbol = ("💚💪🏆")
+    category = (f"{GREEN}Normal{RESET_COLOR}")
+    motivation = ("Muy bien alimentadote y ejercitandote así.")
 elif 25 >= imc < 29.9:
-    cotegory = ("Sobrepeso")
+    symbol = ("🟢⚽🏃‍♂️")
+    cotegory = (f"{GREEN_DARK}Sobrepeso{RESET_COLOR}")
+    motivation = ("Un taquito menos no te mueres de hambre")
 elif 30 >= imc < 34.9:
-    category = ("Obesidad I")
+    symbol = ("🟡🥦🧗‍♀️")
+    category = (f"{YELLOW}Obesidad I{RESET_COLOR}")
+    motivation = ("Necesitas empezar a cuidar tu alimentación y elige un deporte que te guste.")
 elif 35 >= imc < 39.9:
-    category = ("Obesidad II")
+    symbol = ("🟠🏋️❗")
+    category = (f"{ORANGE}Obesidad II{RESET_COLOR}")
+    motivation = ("Ve a examinarte para comenzzar una dieta y deporte riguroso, los necesitas.")
 else:
-    print("Obesidad III") 
-print(f"{imc:.2f}")
-print(' ')
+    symbol = ("🔴⚠️🧑‍⚕️")
+    category = (f"{RED}Obesidad III{RESET_COLOR}")
+    motivation = ("Ve a examinarte para comenzzar una dieta y deporte riguroso, los necesitas.")
+
+print(f"""
+-------------------------------------------------------------
+Sus resultados son: 
+Nombres: {name}
+Apelidos: {last_name}
+Edad: {old_years}
+Peso {body_weight} y Altura {height} ingresados
+Su IMC es de:{imc:.2f} {category} 
+Cometario: {motivation} {symbol}
+-------------------------------------------------------------""")
+
+print('Gracias por usar nuestra calculadora.')
