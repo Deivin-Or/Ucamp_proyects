@@ -117,12 +117,12 @@ GREEN = ("\033[92m")
 GREEN_DARK = ("\033[32m")
 YELLOW = ("\033[93m")
 ORANGE = ("\033[33m")
-RED = "\033[91m"
-RESET_COLOR = "\033[0m"
+RED = ("\033[91m")
+RESET_COLOR = ("\033[0m")
 
 if imc < 18.5:
     symbol = ("🔵🍔🍝")
-    category = (f"{RED}Bajo peso{RESET_COLOR}")
+    category = (f"{BLUE}Bajo peso{RESET_COLOR}")
     motivation = ("Necesitas alimentarte mejor")
 elif 18.5 >= imc < 24.9:
     symbol = ("💚💪🏆")
