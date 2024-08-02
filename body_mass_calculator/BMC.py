@@ -62,7 +62,7 @@ while True:
     # Verificación de esapcio en blanco, cantidaes negativas y exceso de puntos decimales
     if body_weight == "":
         print("No puede dejar campos vacios\n")
-    elif body_weight.count(".") > 1:
+    elif (body_weight.count(".") > 1):
         print("Solo puede usar un punto decimal.\n")
     elif (body_weight.count("-") >= 1):
         print("No se permiten cantidades negativas\n")
