@@ -151,7 +151,7 @@ Sus resultados son:
 Nombres: {name}
 Apelidos: {last_name}
 Edad: {old_years}
-Peso {body_weight} y Altura {height} ingresados
+Datos ingresados: Peso {body_weight} Kilogramos y {height} metros
 Su IMC es de:{imc:.2f} {category} 
 Cometario: {motivation} {symbol}
 -------------------------------------------------------------""")
