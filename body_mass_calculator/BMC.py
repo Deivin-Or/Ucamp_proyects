@@ -32,6 +32,7 @@ while True:
 * Utilice solo letras y esapcios.
 * Solo la primera letra de cada nombre puede ir en mayuscula"""
         print(f"{last_name_error_mensaje}\n")
+
         
 
 #Validación de edad
